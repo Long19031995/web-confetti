@@ -18,10 +18,13 @@ export default {
 
 <style lang="scss">
 .history {
-	border: 1px solid #DBDFE1;
+  @media (min-width: 768px) {
+	  border: 1px solid #DBDFE1;
+  }
 	border-radius: 16px;
   padding: 16px;
   margin-bottom: 16px;
+  background-color: white;
   &__title {
     margin-bottom: 4px;
   }

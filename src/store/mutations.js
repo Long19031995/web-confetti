@@ -5,5 +5,9 @@ export default {
 
   setHistory (state, payload) {
     state.history = payload
+  },
+
+  setIsMobile (state, payload) {
+    state.isMobile = payload
   }
 }

@@ -1,4 +1,5 @@
 export default {
   current: {},
-  history: {}
+  history: {},
+  isMobile: false
 }

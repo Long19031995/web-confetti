@@ -24,12 +24,15 @@ export default {
 
   mounted () {
     this.listenFirebase()
+    this.checkMobile()
+    window.addEventListener('resize', () => this.checkMobile())
   },
 
   methods: {
     ...mapActions({
       setCurrent: 'setCurrent',
-      setHistory: 'setHistory'
+      setHistory: 'setHistory',
+      setIsMobile: 'setIsMobile'
     }),
 
     listenFirebase () {
@@ -37,9 +40,17 @@ export default {
         this.setCurrent(res.val())
       })
 
-      this.db.ref('/data/history').on('value', (res) => {
+      this.db.ref('/data/history').once('value', (res) => {
         this.setHistory(res.val())
       })
+    },
+
+    checkMobile () {
+      if (window.innerWidth < 768) {
+        this.setIsMobile(true)
+      } else {
+        this.setIsMobile(false)
+      }
     }
   }
 }
@@ -57,11 +68,18 @@ export default {
 .web-confetti {
   width: 100%;
   margin: auto;
+  overflow-x: hidden;
   @media (min-width: 1024px) {
-    width: 1024px;
+    width: 960px;
   }
   @media (min-width: 1366px) {
+    width: 1024px;
+  }
+  @media (min-width: 1440px) {
     width: 1366px;
+  }
+  @media (min-width: 1920px) {
+    width: 1440px;
   }
 }
 </style>

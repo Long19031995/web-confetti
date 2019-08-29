@@ -1,7 +1,8 @@
 <template>
   <div class="confetti-fb">
-    <img src="@/assets/fb.svg" alt="facebook">
+    <img src="@/assets/facebook.svg" alt="facebook">
     Open “Confetti Vietnam” now
+    <img src="@/assets/arrow-right.svg" alt="arrow-right">
   </div>
 </template>
 
@@ -13,7 +14,10 @@ export default {
 
 <style lang="scss">
 .confetti-fb {
-  width: 510px;
+  width: 100%;
+  @media (min-width: 768px) {
+    max-width: 510px;
+  }
   margin: auto;
   border-radius: 16px;
   background-color: #0093ED;
@@ -23,5 +27,11 @@ export default {
   color: white;
   font-weight: 600;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
 </style>

@@ -22,8 +22,11 @@ export default {
 <style lang="scss">
 .waiting {
   width: 100%;
-  height: 100%;
-  img {
+  &> img {
+    width: 150%;
+    @media (min-width: 768px) {
+      width: calc(100% - 88px);
+    }
     position: absolute;
     bottom: 0;
     left: 50%;

@@ -16,7 +16,7 @@ export default {
 
   data () {
     return {
-      count: 10
+      count: 5
     }
   },
 
@@ -35,14 +35,23 @@ export default {
 <style lang="scss">
 .web-confetti__current {
   float: left;
-  width: calc(100% - 380px);
-  height: calc(100vh - 32px);
+  width: 100%;
+  height: calc(100vh - 108px);
+  padding: 0 16px;
+  @media (min-width: 768px) {
+    width: calc(100% - 380px);
+    height: calc(100vh - 32px);
+    background-color: #C2E6FA;
+    padding: 40px;
+  }
   border-radius: 24px;
-  background-color: #C2E6FA;
-  padding: 40px;
   margin-top: 16px;
   position: relative;
   @media (min-width: 1366px) {
+    width: calc(100% - 392px);
+    margin-left: 12px;
+  }
+  @media (min-width: 1440px) {
     width: calc(100% - 520px);
     margin-left: 140px;
   }

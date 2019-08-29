@@ -39,11 +39,18 @@ export default {
   width: 100%;
   height: calc(100% - 306px);
   border-radius: 16px;
-  padding: 32px;
   background-color: white;
   position: relative;
+  border: 1px solid #DBDFE1;
+  padding: 16px;
+  @media (min-width: 768px) {
+    border: none;
+    padding: 32px;
+  }
   .quantity {
     margin-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
   }
   .result {
     border: 1px solid #DBDFE1;

@@ -52,18 +52,25 @@ export default {
   height: 100%;
   border-radius: 16px;
   background-color: white;
-  width: 510px;
   height: 286px;
   margin: auto;
-  padding: 16px;
-  margin-top: 200px;
+  padding: 40px 16px 16px;
   margin-bottom: 32px;
   position: relative;
   z-index: 1;
+  width: 100%;
+  border: 1px solid #DBDFE1;
+  @media (min-width: 768px) {
+    margin-top: 200px;
+    max-width: 510px;
+    border: none;
+    padding: 16px;
+  }
   .countdown-count {
     height: 162px;
     width: 100%;
-    position: relative;
+    position: absolute;
+    top: 16px;
     text-align: center;
     &__number,
     &__second-number {

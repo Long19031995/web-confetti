@@ -81,8 +81,13 @@ export default {
     width: 100%;
     border-radius: 16px;
     background-color: white;
-    padding: 32px;
     margin-bottom: 32px;
+    border: 1px solid #DBDFE1;
+    padding: 16px;
+    @media (min-width: 768px) {
+      border: none;
+      padding: 32px;
+    }
     .question {
       margin-bottom: 16px;
       &> p:nth-child(1) {

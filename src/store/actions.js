@@ -5,5 +5,9 @@ export default {
 
   setHistory ({ commit }, payload) {
     commit('setHistory', payload)
+  },
+
+  setIsMobile ({ commit }, payload) {
+    commit('setIsMobile', payload)
   }
 }

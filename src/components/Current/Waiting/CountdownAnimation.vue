@@ -42,7 +42,10 @@ export default {
   border: 1px solid #DBDFE1;
   border-radius: 16px;
   padding: 16px;
-  width: 100%;
+  width: calc(100% - 32px);
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
   &__item {
     &> p:nth-child(1) {
       margin-bottom: 4px;
