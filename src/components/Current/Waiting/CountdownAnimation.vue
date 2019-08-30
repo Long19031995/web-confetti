@@ -32,7 +32,7 @@ export default {
       if (this.indexActive > this.listQuestion.length - 1) {
         this.indexActive = 0
       }
-    }, 2000)
+    }, 5000)
   }
 }
 </script>

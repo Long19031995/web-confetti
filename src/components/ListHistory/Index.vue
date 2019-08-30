@@ -9,7 +9,7 @@
     </div>
 
     <div class="web-confetti__list-history__welcome">
-      <p>Good Afternoon!</p>
+      <p>{{ textHello }}</p>
       <p>Welcome back to Confetti, we missed you!</p>
     </div>
 
@@ -42,7 +42,19 @@ export default {
 
     ...mapState({
       isMobile: 'isMobile'
-    })
+    }),
+
+    textHello () {
+      const hours = new Date().getHours()
+
+      if (hours < 8) {
+        return 'Good Morning!'
+      } else if (hours < 16) {
+        return 'Good Afternoon!'
+      } else {
+        return 'Good Evening!'
+      }
+    }
   },
 
   data () {
@@ -77,7 +89,7 @@ export default {
   @media (min-width: 768px) {
     width: 380px;
     height: 100vh;
-    padding: 80px 8px 8px 8px;
+    padding: 16px 8px 8px 8px;
   }
   &__bars {
     position: absolute;
@@ -92,7 +104,6 @@ export default {
     font-size: 18px;
     @media (min-width: 768px) {
       justify-content: flex-start;
-      margin-bottom: 80px;
       font-size: 24px;
     }
     color: #1a1f23;
@@ -115,7 +126,7 @@ export default {
     @media (min-width: 768px) {
       display: block !important;
     }
-    margin-bottom: 80px;
+    margin-bottom: 32px;
     &> p:nth-child(1) {
       font-size: 36px;
       color: #1a1f23;
@@ -129,7 +140,7 @@ export default {
     margin-right: -8px;
     margin-top: -84px;
     padding: 96px 16px;
-    height: calc(100% - 250px);
+    height: calc(100% - 160px);
     @media (min-width: 768px) {
       display: block !important;
       background-color: transparent;

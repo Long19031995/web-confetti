@@ -5,10 +5,10 @@
       <p>{{ question }}</p>
     </div>
     <div class="list-answer">
-      <div v-for="(answer, index) in listAnswer" class="answer">
+      <div v-for="(answer, index) in listAnswer" class="answer" :class="{ 'active': answer.toLowerCase() === correctAnswer.toLowerCase() }">
         <div>{{ answer }}</div>
-        <div>{{ listAnswerQuantity[index] }} kết quả</div>
-        <div class="answer__progress" :style="{ 'width': `${listAnswerPercent[index]}%` }"></div>
+        <div v-show="!correctAnswer">{{ listAnswerQuantity[index] }} kết quả</div>
+        <div v-show="!correctAnswer" class="answer__progress" :style="{ 'width': `${listAnswerPercent[index]}%` }"></div>
       </div>
     </div>
   </div>
@@ -23,7 +23,8 @@ export default {
   computed: {
     ...mapGetters({
       qAndA: 'getQAndA',
-      listSearchResult: 'getListSearchResult'
+      listSearchResult: 'getListSearchResult',
+      correctAnswer: 'getCorrectAnswer'
     }),
 
     question () {
@@ -47,7 +48,7 @@ export default {
 
           const searchCombine = link + snippet + title
 
-          const match = searchCombine.match(new RegExp(answer, 'g')) || []
+          const match = searchCombine.match(new RegExp(answer, 'i')) || []
 
           count += match.length
         })
@@ -81,7 +82,7 @@ export default {
     width: 100%;
     border-radius: 16px;
     background-color: white;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     border: 1px solid #DBDFE1;
     padding: 16px;
     @media (min-width: 768px) {
@@ -112,6 +113,10 @@ export default {
         transition: .3s ease-out;
         display: flex;
         justify-content: space-between;
+        &.active {
+          background-color: #0093ed;
+          color: white;
+        }
         &__progress {
           position: absolute;
           left: 0;

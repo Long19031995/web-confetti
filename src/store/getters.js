@@ -56,6 +56,14 @@ export default {
     return qAndA
   },
 
+  getCorrectAnswer (state) {
+    const current = state.current || {}
+
+    const correctAnswer = current.correct_answer || ''
+
+    return correctAnswer
+  },
+
   getListSearchResult (state) {
     const current = state.current || {}
     const listSearchResult = current.search_result || []

@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 .history {
   @media (min-width: 768px) {
-	  border: 1px solid #DBDFE1;
+    border: 1px solid #DBDFE1;
   }
 	border-radius: 16px;
   padding: 16px;

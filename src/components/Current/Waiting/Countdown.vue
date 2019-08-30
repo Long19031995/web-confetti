@@ -2,11 +2,11 @@
   <div class="countdown">
     <div class="countdown-count">
       <p>Our time</p>
-      <div class="countdown-count__number" :class="classNumber">
-        {{ count }}
+      <div class="countdown-count__number" :class="enlarge">
+        {{ countDown }}
       </div>
-      <div class="countdown-count__second-number" :class="classNumber">
-        {{ count }}
+      <div class="countdown-count__second-number" :class="enlarge">
+        {{ countDown }}
       </div>
     </div>
     <countdown-animation></countdown-animation>
@@ -23,20 +23,31 @@ export default {
 
   components: { CountdownAnimation },
 
-  data () {
-    return {
-      classNumber: ''
-    }
-  },
+  computed: {
+    hours () {
+      const hours = this.count.hours
 
-  watch: {
-    count () {
-      this.$el.querySelector('.countdown-count__number').classList.add('enlarge')
-      this.$el.querySelector('.countdown-count__second-number').classList.add('enlarge')
-      setTimeout(() => {
-        this.$el.querySelector('.countdown-count__number').classList.remove('enlarge')
-        this.$el.querySelector('.countdown-count__second-number').classList.remove('enlarge')
-      }, 1000)
+      return hours > 0 ? `${hours}:` : ''
+    },
+
+    minutes () {
+      const minutes = this.count.minutes
+
+      return minutes > 0 ? `${minutes}:` : ''
+    },
+
+    seconds () {
+      const seconds = this.count.seconds
+
+      return seconds
+    },
+
+    countDown () {
+      return this.hours + this.minutes + this.seconds
+    },
+
+    enlarge () {
+      return this.hours <= 0 && this.minutes <= 0 && this.seconds <= 10
     }
   }
 }
@@ -61,7 +72,6 @@ export default {
   width: 100%;
   border: 1px solid #DBDFE1;
   @media (min-width: 768px) {
-    margin-top: 200px;
     max-width: 510px;
     border: none;
     padding: 16px;
@@ -86,12 +96,16 @@ export default {
     }
     &__number {
       &.enlarge {
-        animation: enlarge 1s forwards;
+        animation: enlarge;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
       }
     }
     &__second-number {
       &.enlarge {
-        animation: second-enlarge 1.5s forwards;
+        animation: second-enlarge;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
       }
     }
   }

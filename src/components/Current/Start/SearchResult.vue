@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 .search-result {
   width: 100%;
-  height: calc(100% - 306px);
+  height: calc(100% - 208px);
   border-radius: 16px;
   background-color: white;
   position: relative;

@@ -1,9 +1,11 @@
 <template>
-  <div class="confetti-fb">
-    <img src="@/assets/facebook.svg" alt="facebook">
-    Open “Confetti Vietnam” now
-    <img src="@/assets/arrow-right.svg" alt="arrow-right">
-  </div>
+  <a href="https://www.facebook.com/ConfettiVietnam/" target="_blank">
+    <div class="confetti-fb">
+      <img src="@/assets/facebook.svg" alt="facebook">
+      Open “Confetti Vietnam” now
+      <img src="@/assets/arrow-right.svg" alt="arrow-right">
+    </div>
+  </a>
 </template>
 
 <script>
@@ -13,6 +15,9 @@ export default {
 </script>
 
 <style lang="scss">
+a {
+  text-decoration: none;
+}
 .confetti-fb {
   width: 100%;
   @media (min-width: 768px) {
@@ -30,7 +35,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     cursor: pointer;
   }
 }

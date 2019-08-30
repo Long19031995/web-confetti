@@ -1,6 +1,6 @@
 <template>
   <div class="web-confetti__current">
-    <waiting v-if="count" :count="count"></waiting>
+    <waiting v-if="isShowWaiting" :count="count"></waiting>
     <start v-else></start>
   </div>
 </template>
@@ -16,18 +16,60 @@ export default {
 
   data () {
     return {
-      count: 5
+      count: {},
+      isShowWaiting: true
     }
   },
 
   mounted () {
-    const interval = setInterval(() => {
-      this.count--
+    this.count = this.getCount()
 
-      if (this.count === 0) {
-        clearInterval(interval)
+    if (this.count.hours > 0) {
+      this.countDown()
+    } else {
+      this.isShowWaiting = false
+    }
+  },
+
+  methods: {
+    getCount () {
+      const date = new Date()
+
+      const hours = date.getHours()
+      const minutes = date.getMinutes()
+      const seconds = date.getSeconds()
+
+      const count = {
+        hours: 22 - hours,
+        minutes: 60 - minutes,
+        seconds: 60 - seconds
       }
-    }, 1000)
+
+      return count
+    },
+
+    countDown () {
+      const interval = setInterval(() => {
+        if (this.count.seconds > 1) {
+          this.count.seconds--
+        } else {
+          this.count.seconds = 59
+          if (this.count.minutes > 1) {
+            this.count.minutes--
+          } else {
+            this.count.minutes = 59
+            if (this.count.hours > 1) {
+              this.count.hours--
+            }
+          }
+        }
+
+        if (this.count.hours === 0 && this.count.minutes === 0 && this.count.seconds === 0) {
+          this.isShowWaiting = false
+          clearInterval(interval)
+        }
+      }, 1000)
+    }
   }
 }
 </script>
@@ -42,7 +84,7 @@ export default {
     width: calc(100% - 380px);
     height: calc(100vh - 32px);
     background-color: #C2E6FA;
-    padding: 40px;
+    padding: 24px;
   }
   border-radius: 24px;
   margin-top: 16px;
