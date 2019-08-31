@@ -27,19 +27,19 @@ export default {
     hours () {
       const hours = this.count.hours
 
-      return hours > 0 ? `${hours}:` : ''
+      return hours > 0 ? `${hours < 10 ? `0${hours}` : hours}:` : ''
     },
 
     minutes () {
       const minutes = this.count.minutes
 
-      return minutes > 0 ? `${minutes}:` : ''
+      return minutes > 0 ? `${minutes < 10 ? `0${minutes}` : minutes}:` : ''
     },
 
     seconds () {
       const seconds = this.count.seconds
 
-      return seconds
+      return seconds < 10 ? `0${seconds}` : seconds
     },
 
     countDown () {
@@ -86,7 +86,10 @@ export default {
     &__second-number {
       font-family: 'Press Start 2P', cursive;
       position: absolute;
-      font-size: 60px;
+      font-size: 32px;
+      @media (min-width: 1024px) {
+        font-size: 56px;
+      }
       font-weight: bold;
       position: absolute;
       left: 50%;

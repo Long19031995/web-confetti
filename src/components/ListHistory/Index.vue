@@ -83,7 +83,7 @@ export default {
 .web-confetti__list-history {
   width: 100%;
   height: auto;
-  padding: 32px 8px 8px 8px;
+  padding: 8px;
   float: left;
   position: relative;
   @media (min-width: 768px) {
@@ -93,18 +93,22 @@ export default {
   }
   &__bars {
     position: absolute;
-    top: 20px;
+    top: -4px;
+    @media (min-width: 768px) {
+      top: 20px;
+    }
     padding: 16px;
   }
   &__title {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
     font-size: 18px;
+    margin-bottom: 8px;
     @media (min-width: 768px) {
       justify-content: flex-start;
       font-size: 24px;
+      margin-bottom: 32px;
     }
     color: #1a1f23;
     font-weight: 600;
@@ -153,7 +157,7 @@ export default {
       text-align: center;
       font-size: 18px;
       font-weight: 600;
-      padding: 30px 0 46px;
+      padding: 8px 0;
       color: white;
       position: fixed;
       top: 0;
@@ -162,7 +166,7 @@ export default {
       background-color: #C2E6FA;
       &__icon-close {
         position: absolute;
-        top: 10px;
+        top: -12px;
         right: -8px;
         padding: 24px;
       }

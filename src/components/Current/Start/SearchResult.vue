@@ -1,6 +1,6 @@
 <template>
   <vue-custom-scrollbar :settings="{ suppressScrollX: true }" class="search-result">
-    <p class="quantity">Khoảng 969.000 kết quả (0,55 giây)</p>
+    <!-- <p class="quantity">Khoảng 969.000 kết quả (0,55 giây)</p> -->
     <div v-for="result in listSearchResult" class="result">
       <div class="title">
         {{ result.title }}

@@ -40,7 +40,7 @@ export default {
       const seconds = date.getSeconds()
 
       const count = {
-        hours: 22 - hours,
+        hours: 21 - hours,
         minutes: 60 - minutes,
         seconds: 60 - seconds
       }
@@ -78,16 +78,16 @@ export default {
 .web-confetti__current {
   float: left;
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 40px);
   padding: 0 16px;
   @media (min-width: 768px) {
     width: calc(100% - 380px);
     height: calc(100vh - 32px);
     background-color: #C2E6FA;
     padding: 24px;
+    margin-top: 16px;
   }
   border-radius: 24px;
-  margin-top: 16px;
   position: relative;
   @media (min-width: 1366px) {
     width: calc(100% - 392px);
