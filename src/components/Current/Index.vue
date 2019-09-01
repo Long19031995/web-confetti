@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       count: {},
-      isShowWaiting: true
+      isShowWaiting: false
     }
   },
 
@@ -40,7 +40,7 @@ export default {
       const seconds = date.getSeconds()
 
       const count = {
-        hours: 21 - hours,
+        hours: 20 - hours,
         minutes: 60 - minutes,
         seconds: 60 - seconds
       }

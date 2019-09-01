@@ -57,16 +57,27 @@ export default {
   },
 
   getCorrectAnswer (state) {
-    const current = state.current || {}
+    const answer = state.answer || {}
 
-    const correctAnswer = current.correct_answer || ''
+    const correctAnswer = answer.correct_answer || ''
 
     return correctAnswer
   },
 
-  getListSearchResult (state) {
+  getListSearchResult (state, getters) {
+    const qAndA = getters.getQAndA || {}
+    const listAnswer = qAndA.listAnswer || []
+
     const current = state.current || {}
     const listSearchResult = current.search_result || []
+
+    listAnswer.forEach((answer) => {
+      listSearchResult.forEach((searchResult) => {
+        const snippet = searchResult.snippet || ''
+
+        searchResult.snippet = snippet.replace(new RegExp(answer, 'i'), `<b class="text-red">${answer}</b>`)
+      })
+    })
 
     return listSearchResult
   }

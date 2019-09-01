@@ -30,12 +30,17 @@ export default {
 
   methods: {
     ...mapActions({
+      setAnswer: 'setAnswer',
       setCurrent: 'setCurrent',
       setHistory: 'setHistory',
       setIsMobile: 'setIsMobile'
     }),
 
     listenFirebase () {
+      this.db.ref('/data/answer').on('value', (res) => {
+        this.setAnswer(res.val())
+      })
+
       this.db.ref('/data/current').on('value', (res) => {
         this.setCurrent(res.val())
       })

@@ -5,8 +5,8 @@
       <p>{{ question }}</p>
     </div>
     <div class="list-answer">
-      <div v-for="(answer, index) in listAnswer" class="answer" :class="{ 'active': answer.toLowerCase() === correctAnswer.toLowerCase() }">
-        <div>{{ answer }}</div>
+      <div v-for="(answer, index) in listAnswer" class="answer" :class="{ 'active': correctAnswer.toLowerCase().includes(answer.toLowerCase()) }">
+        <div class="answer__text">{{ answer }}</div>
         <div v-show="!correctAnswer">{{ listAnswerQuantity[index] }} kết quả</div>
         <div v-show="!correctAnswer" class="answer__progress" :style="{ 'width': `${listAnswerPercent[index]}%` }"></div>
       </div>
@@ -42,13 +42,9 @@ export default {
         let count = 0
 
         this.listSearchResult.forEach((searchResult) => {
-          const link = searchResult.link || ''
           const snippet = searchResult.snippet || ''
-          const title = searchResult.title || ''
 
-          const searchCombine = link + snippet + title
-
-          const match = searchCombine.match(new RegExp(answer, 'i')) || []
+          const match = snippet.match(new RegExp(answer, 'i')) || []
 
           count += match.length
         })
@@ -115,7 +111,9 @@ export default {
         justify-content: space-between;
         &.active {
           background-color: #0093ed;
-          color: white;
+          .answer__text {
+            color: white;
+          }
         }
         &__progress {
           position: absolute;

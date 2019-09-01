@@ -10,9 +10,7 @@
           {{ result.link }}
         </a>
       </div>
-      <div class="content">
-        {{ result.snippet }}
-      </div>
+      <div class="snippet" v-html="result.snippet"></div>
     </div>
   </vue-custom-scrollbar>
 </template>
@@ -64,10 +62,18 @@ export default {
       margin-bottom: 8px;
     }
     .link {
+      overflow: hidden;
+      text-overflow: ellipsis;
       a {
         color: #0093ED;
       }
       margin-bottom: 8px;
+    }
+    .snippet {
+      color: #1a1f23;
+      .text-red {
+        color: red;
+      }
     }
   }
 }

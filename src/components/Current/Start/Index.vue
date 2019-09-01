@@ -6,13 +6,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import QAndA from './QAndA.vue'
 import SearchResult from './SearchResult.vue'
 
 export default {
   name: 'Start',
 
-  components: { QAndA, SearchResult }
+  components: { QAndA, SearchResult },
+
+  computed: {
+    ...mapGetters({
+      qAndA: 'getQAndA'
+    })
+  }
 }
 </script>
 

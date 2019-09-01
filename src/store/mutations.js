@@ -1,4 +1,8 @@
 export default {
+  setAnswer (state, payload) {
+    state.answer = payload
+  },
+
   setCurrent (state, payload) {
     state.current = payload
   },
