@@ -72,7 +72,7 @@ export default {
     .snippet {
       color: #1a1f23;
       .text-red {
-        color: red;
+        color: #e66b4c;
       }
     }
   }

@@ -5,14 +5,14 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-var firebaseConfig = {
-  apiKey: 'AIzaSyClSzMYK_HHOWaiCwWVIdZ40VYfk-JaQz4',
-  authDomain: 'pikalong-cft.firebaseapp.com',
-  databaseURL: 'https://pikalong-cft.firebaseio.com',
-  projectId: 'pikalong-cft',
-  storageBucket: 'pikalong-cft.appspot.com',
-  messagingSenderId: '308378526236',
-  appId: '1:308378526236:web:7ca979cad87298d1'
+const firebaseConfig = {
+  apiKey: "AIzaSyCd3B2u6na1Tn8mH6VDTF4kyhwTstkTrl4",
+  authDomain: "confetti-live.firebaseapp.com",
+  databaseURL: "https://confetti-live.firebaseio.com",
+  projectId: "confetti-live",
+  storageBucket: "confetti-live.appspot.com",
+  messagingSenderId: "266485291719",
+  appId: "1:266485291719:web:55035f0c928c15e1"
 }
 
 firebase.initializeApp(firebaseConfig)

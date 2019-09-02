@@ -33,7 +33,7 @@ export default {
     minutes () {
       const minutes = this.count.minutes
 
-      return minutes > 0 ? `${minutes < 10 ? `0${minutes}` : minutes}:` : ''
+      return minutes > 0 ? `${minutes < 10 ? `0${minutes}` : minutes}:` : `${this.count.hours > 0 ? '00:': ''}`
     },
 
     seconds () {

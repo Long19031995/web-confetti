@@ -24,7 +24,7 @@ export default {
   mounted () {
     this.count = this.getCount()
 
-    if (this.count.hours > 0) {
+    if (this.count.hours >= 0) {
       this.countDown()
     } else {
       this.isShowWaiting = false
@@ -41,8 +41,8 @@ export default {
 
       const count = {
         hours: 20 - hours,
-        minutes: 60 - minutes,
-        seconds: 60 - seconds
+        minutes: 59 - minutes,
+        seconds: 59 - seconds
       }
 
       return count
@@ -50,21 +50,21 @@ export default {
 
     countDown () {
       const interval = setInterval(() => {
-        if (this.count.seconds > 1) {
+        if (this.count.seconds > 0) {
           this.count.seconds--
-        } else {
+        } else if (this.count.minutes > 0 || this.count.hours > 0) {
           this.count.seconds = 59
-          if (this.count.minutes > 1) {
+          if (this.count.minutes > 0) {
             this.count.minutes--
-          } else {
+          } else if (this.count.hours > 0) {
             this.count.minutes = 59
-            if (this.count.hours > 1) {
+            if (this.count.hours > 0) {
               this.count.hours--
             }
           }
         }
 
-        if (this.count.hours === 0 && this.count.minutes === 0 && this.count.seconds === 0) {
+        if (this.count.hours <= 0 && this.count.minutes <= 0 && this.count.seconds <= 0) {
           this.isShowWaiting = false
           clearInterval(interval)
         }
