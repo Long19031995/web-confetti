@@ -69,14 +69,27 @@ export default {
     const listAnswer = qAndA.listAnswer || []
 
     const current = state.current || {}
-    const listSearchResult = current.search_result || []
+    const searchResult = current.search_result || []
+    const listSearchResult = []
 
-    listAnswer.forEach((answer) => {
-      listSearchResult.forEach((searchResult) => {
+    searchResult.forEach((searchResult) => {
+      let hasHighlight = false
+
+      listAnswer.forEach((answer) => {
         const snippet = searchResult.snippet || ''
 
         searchResult.snippet = snippet.replace(new RegExp(answer, 'i'), `<b class="text-red">${answer}</b>`)
+
+        if (!hasHighlight && snippet.toLowerCase().includes(answer.toLowerCase())) {
+          hasHighlight = true
+        }
       })
+
+      if (hasHighlight) {
+        listSearchResult.unshift(searchResult)
+      } else {
+        listSearchResult.push(searchResult)
+      }
     })
 
     return listSearchResult
