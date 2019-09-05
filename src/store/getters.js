@@ -61,7 +61,7 @@ export default {
 
     let correctAnswer = answer.correct_answer || ''
 
-    correctAnswer = correctAnswer.match(/.*Đáp án đúng:(.*)\(.*\)/)
+    correctAnswer = correctAnswer.match(/.*Đáp án đúng:(.*)\(.*\)/) || []
     correctAnswer = correctAnswer[1] || ''
     correctAnswer = correctAnswer.trim()
 
