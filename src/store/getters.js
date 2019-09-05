@@ -59,7 +59,11 @@ export default {
   getCorrectAnswer (state) {
     const answer = state.answer || {}
 
-    const correctAnswer = answer.correct_answer || ''
+    let correctAnswer = answer.correct_answer || ''
+
+    correctAnswer = correctAnswer.match(/.*Đáp án đúng:(.*)\(.*\)/)
+    correctAnswer = correctAnswer[1] || ''
+    correctAnswer = correctAnswer.trim()
 
     return correctAnswer
   },
