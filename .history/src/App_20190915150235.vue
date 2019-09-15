@@ -1,39 +1,8 @@
 <template>
-  <div>
-    <div class="web-confetti-ads">
-      <!-- DinhKhai-Ads3 -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6339475136158825"
-          data-ad-slot="5292080311"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-    </div>
-
-    <div class="web-confetti">
-      <list-history></list-history>
-      <current></current>
-    </div>
-
-    <div class="web-confetti-ads">
-      <!-- DinhKhai-Ads3 -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6339475136158825"
-          data-ad-slot="5292080311"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-    </div>
-
-    <popup>
-      <!-- DinhKhai-Ads2 -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6339475136158825"
-          data-ad-slot="4170570333"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-    </popup>
+  <div class="web-confetti">
+    <list-history></list-history>
+    <current></current>
+    <popup></popup>
   </div>
 </template>
 
@@ -122,23 +91,5 @@ body {
   @media (min-width: 1920px) {
     width: 1440px;
   }
-}
-.web-confetti-ads {
-  display: none;
-  float: left;
-  height: 100vh;
-  @media (min-width: 1024px) {
-    display: block;
-    width: calc(50% - 480px);
-  }
-  @media (min-width: 1366px) {
-    width: calc(50% - 512px);
-  }
-  @media (min-width: 1440px) {
-    width: calc(50% - 683px);
-  }
-  @media (min-width: 1920px) {
-  }
-    width: calc(50% - 720px);
 }
 </style>

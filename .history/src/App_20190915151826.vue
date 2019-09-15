@@ -26,13 +26,7 @@
     </div>
 
     <popup>
-      <!-- DinhKhai-Ads2 -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6339475136158825"
-          data-ad-slot="4170570333"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
+      abc
     </popup>
   </div>
 </template>

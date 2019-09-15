@@ -13,6 +13,7 @@
     <div class="web-confetti">
       <list-history></list-history>
       <current></current>
+      <popup></popup>
     </div>
 
     <div class="web-confetti-ads">
@@ -24,16 +25,6 @@
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
     </div>
-
-    <popup>
-      <!-- DinhKhai-Ads2 -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6339475136158825"
-          data-ad-slot="4170570333"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-    </popup>
   </div>
 </template>
 
@@ -138,7 +129,7 @@ body {
     width: calc(50% - 683px);
   }
   @media (min-width: 1920px) {
-  }
     width: calc(50% - 720px);
+  }
 }
 </style>
