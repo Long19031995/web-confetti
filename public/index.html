@@ -86,26 +86,34 @@
     </div>
 
     <script>
+      let popup = null
+
       function hidePopup() {
-        const popup = document.querySelector('.popup')
         popup.style.display = 'none'
       }
+
+      function showPopup() {
+        popup.style.display = 'flex'
+      }
+
+      setTimeout(() => {
+        popup = document.querySelector('.popup')
+        popup.style.height = '100%'
+      }, 3000);
     </script>
 
     <div onclick="hidePopup()" class="popup">
-      <div class="popup__content">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- DinhKhai-Ads2 -->
-        <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-6339475136158825"
-              data-ad-slot="4170570333"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-        <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- DinhKhai-Ads2 -->
+      <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6339475136158825"
+            data-ad-slot="4170570333"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+      <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
 
     <style>
