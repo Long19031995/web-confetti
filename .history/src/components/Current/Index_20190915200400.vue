@@ -98,7 +98,7 @@ export default {
     margin-left: 140px;
   }
   &.background-red {
-    background-color: #FF4500;
+    background-color: #e85244;
   }
 }
 </style>

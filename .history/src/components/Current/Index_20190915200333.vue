@@ -97,7 +97,7 @@ export default {
     width: calc(100% - 520px);
     margin-left: 140px;
   }
-  &.background-red {
+  .background-red {
     background-color: #FF4500;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="web-confetti__current" :class="{ 'background-red': isShowWaiting }">
+  <div class="web-confetti__current">
     <waiting v-if="isShowWaiting" :count="count"></waiting>
     <start v-else></start>
   </div>
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       count: {},
-      isShowWaiting: true
+      isShowWaiting: false
     }
   },
 
@@ -83,7 +83,7 @@ export default {
   @media (min-width: 768px) {
     width: calc(100% - 380px);
     height: calc(100vh - 32px);
-    background-color: #C2E6FA;
+    background-color: #ffcab6;
     padding: 24px;
     margin-top: 16px;
   }
@@ -96,9 +96,6 @@ export default {
   @media (min-width: 1440px) {
     width: calc(100% - 520px);
     margin-left: 140px;
-  }
-  &.background-red {
-    background-color: #FF4500;
   }
 }
 </style>

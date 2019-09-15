@@ -43,7 +43,7 @@ export default {
     font-weight: 600;
     &.active {
       color: white;
-      background-color: #e85244;
+      background-color: #faa691;
     }
   }
 }

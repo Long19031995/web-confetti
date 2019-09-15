@@ -98,7 +98,7 @@ export default {
         display: flex;
         justify-content: space-between;
         &.active {
-          background-color: #e85244;
+          background-color: #faa691;
           .answer__text {
             color: white;
           }
@@ -108,7 +108,7 @@ export default {
           left: 0;
           bottom: 0;
           height: 4px;
-          background-color: #e85244;
+          background-color: #faa691;
           border-radius: 16px;
         }
       }

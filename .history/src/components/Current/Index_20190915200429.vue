@@ -27,7 +27,7 @@ export default {
     if (this.count.hours >= 0) {
       this.countDown()
     } else {
-      this.isShowWaiting = false
+      this.isShowWaiting = true
     }
   },
 

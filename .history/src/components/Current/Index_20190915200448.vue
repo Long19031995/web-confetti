@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       count: {},
-      isShowWaiting: true
+      isShowWaiting: false
     }
   },
 

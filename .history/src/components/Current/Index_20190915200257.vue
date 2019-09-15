@@ -80,6 +80,9 @@ export default {
   width: 100%;
   height: calc(100vh - 40px);
   padding: 0 16px;
+  .background-red {
+    background-color: #C2E6FA;
+  }
   @media (min-width: 768px) {
     width: calc(100% - 380px);
     height: calc(100vh - 32px);
@@ -96,9 +99,6 @@ export default {
   @media (min-width: 1440px) {
     width: calc(100% - 520px);
     margin-left: 140px;
-  }
-  &.background-red {
-    background-color: #FF4500;
   }
 }
 </style>

@@ -74,4 +74,35 @@ export default {
 
     return searchResult
   }
+
+  // getListSearchResult (state, getters) {
+  //   const qAndA = getters.getQAndA || {}
+  //   const listAnswer = qAndA.listAnswer || []
+
+  //   const current = state.current || {}
+  //   const searchResult = current.search_result || []
+  //   const listSearchResult = []
+
+  //   searchResult.forEach((searchResult) => {
+  //     let hasHighlight = false
+
+  //     listAnswer.forEach((answer) => {
+  //       const snippet = searchResult.snippet || ''
+
+  //       searchResult.snippet = snippet.replace(new RegExp(answer, 'i'), `<b class="text-red">${answer}</b>`)
+
+  //       if (!hasHighlight && snippet.toLowerCase().includes(answer.toLowerCase())) {
+  //         hasHighlight = true
+  //       }
+  //     })
+
+  //     if (hasHighlight) {
+  //       listSearchResult.unshift(searchResult)
+  //     } else {
+  //       listSearchResult.push(searchResult)
+  //     }
+  //   })
+
+  //   return listSearchResult
+  // }
 }

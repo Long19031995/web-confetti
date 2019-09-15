@@ -72,8 +72,7 @@ export default {
     .snippet {
       color: #1a1f23;
       b {
-        font-size: 20px;
-        color: #e85244;
+        color: #e66b4c;
       }
     }
   }

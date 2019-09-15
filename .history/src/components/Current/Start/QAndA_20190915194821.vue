@@ -32,15 +32,28 @@ export default {
     },
 
     listAnswer () {
-      const listAnswer = this.qAndA.listAnswer || []
-
-      return listAnswer.map((answer) => answer.split('|')[0].trim())
+      return this.qAndA.listAnswer || []
     },
 
     listAnswerQuantity () {
-      const listAnswer = this.qAndA.listAnswer || []
+      console.log(this.listAnswer)
+      let listAnswerQuantity = []
 
-      return listAnswer.map((answer) => Number(answer.split('|')[1].trim()))
+      listAnswerQuantity = this.listAnswer.map((answer) => {
+        let count = 0
+
+        this.listSearchResult.forEach((searchResult) => {
+          const snippet = searchResult.snippet || ''
+
+          const match = snippet.match(new RegExp(answer, 'i')) || []
+
+          count += match.length
+        })
+
+        return count
+      })
+
+      return listAnswerQuantity
     },
 
     listAnswerPercent () {
@@ -98,7 +111,7 @@ export default {
         display: flex;
         justify-content: space-between;
         &.active {
-          background-color: #e85244;
+          background-color: #0093ed;
           .answer__text {
             color: white;
           }
@@ -108,7 +121,7 @@ export default {
           left: 0;
           bottom: 0;
           height: 4px;
-          background-color: #e85244;
+          background-color: #0093ED;
           border-radius: 16px;
         }
       }
