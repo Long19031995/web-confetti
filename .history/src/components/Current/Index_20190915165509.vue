@@ -83,7 +83,7 @@ export default {
   @media (min-width: 768px) {
     width: calc(100% - 380px);
     height: calc(100vh - 32px);
-    background-color: #FF4500;
+    background-color: #C2E6FA;
     padding: 24px;
     margin-top: 16px;
   }
