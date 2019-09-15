@@ -1,7 +1,22 @@
 <template>
-  <div class="web-confetti">
-    <list-history></list-history>
-    <current></current>
+  <div>
+    <div class="web-confetti-ads">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- DinhKhai-Ads3 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-6339475136158825"
+          data-ad-slot="5292080311"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="web-confetti">
+      <list-history></list-history>
+      <current></current>
+    </div>
   </div>
 </template>
 
@@ -69,6 +84,12 @@ export default {
   font-family: 'Archivo', sans-serif;
   color: #6E7A81;
   font-size: 14px;
+}
+.web-confetti-ads {
+  display: none;
+  @media (min-width: 1024px) {
+    width: calc((100% - 960px) / 2);
+  }
 }
 .web-confetti {
   width: 100%;

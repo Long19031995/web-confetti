@@ -1,7 +1,10 @@
 <template>
-  <div class="web-confetti">
-    <list-history></list-history>
-    <current></current>
+  <div>
+
+    <div class="web-confetti">
+      <list-history></list-history>
+      <current></current>
+    </div>
   </div>
 </template>
 

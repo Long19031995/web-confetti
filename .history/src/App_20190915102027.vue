@@ -1,7 +1,12 @@
 <template>
-  <div class="web-confetti">
-    <list-history></list-history>
-    <current></current>
+  <div>
+    <div class="web-confetti-ads">
+
+    </div>
+    <div class="web-confetti">
+      <list-history></list-history>
+      <current></current>
+    </div>
   </div>
 </template>
 
@@ -69,6 +74,13 @@ export default {
   font-family: 'Archivo', sans-serif;
   color: #6E7A81;
   font-size: 14px;
+}
+.web-confetti-ads {
+  display: none;
+  float: left;
+  @media (min-width: 1024px) {
+    width: calc(100% - 960px) / 2;
+  }
 }
 .web-confetti {
   width: 100%;

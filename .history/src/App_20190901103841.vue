@@ -72,7 +72,7 @@ export default {
 }
 .web-confetti {
   width: 100%;
-  float: left;
+  margin: auto;
   overflow-x: hidden;
   @media (min-width: 1024px) {
     width: 960px;
