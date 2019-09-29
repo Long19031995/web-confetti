@@ -6,10 +6,12 @@
 </template>
 
 <script>
-import firebase from 'firebase/app'
 import { mapActions } from 'vuex'
 import ListHistory from './components/ListHistory/Index.vue'
 import Current from './components/Current/Index.vue'
+import io from 'socket.io-client'
+import history from './history'
+import axios from 'axios'
 
 export default {
   name: 'WebConfetti',
@@ -18,12 +20,12 @@ export default {
 
   data () {
     return {
-      db: firebase.database()
+      socket: io('https://socket.pikalongstudio.com/')
     }
   },
 
   mounted () {
-    this.listenFirebase()
+    this.listenSocket()
     this.checkMobile()
     window.addEventListener('resize', () => this.checkMobile())
   },
@@ -36,18 +38,21 @@ export default {
       setIsMobile: 'setIsMobile'
     }),
 
-    listenFirebase () {
-      this.db.ref('/data/answer').on('value', (res) => {
-        this.setAnswer(res.val())
+    async listenSocket () {
+      this.socket.on('answer', (data) => {
+        this.setAnswer(data)
       })
 
-      this.db.ref('/data/current').on('value', (res) => {
-        this.setCurrent(res.val())
+      this.socket.on('question', (data) => {
+        this.setCurrent(data)
       })
 
-      this.db.ref('/data/history').once('value', (res) => {
-        this.setHistory(res.val())
-      })
+      this.setHistory(history)
+
+      const response = await axios.get('https://api.pikalongstudio.com/')
+      const output = response.data.output[0]
+      this.setAnswer(output.answer)
+      this.setCurrent(output.current)
     },
 
     checkMobile () {
